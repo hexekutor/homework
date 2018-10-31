@@ -1,0 +1,8 @@
+AmountOfUsers.class
+Main.class
+DecodeThread.class
+EncodeThread.class
+ReadFileThread.class
+User.class
+WriteDecodedTread.class
+WriteEncodedThread.class
