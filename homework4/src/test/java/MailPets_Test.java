@@ -23,13 +23,10 @@ public class MailPets_Test {
     public void check_show_more_button(){
         new MailPetsPage(driver)
             .open()
-            .pageShouldBeOpened()
-            .assertUrl()
             .countNewsBeforePressShowMore()
             .pressShowMoreButton()
             .countNewsAfterPressShowMore()
-            .checkEqualNewsAfterPressShowMore()
-            .checkButton();
+            .checkEqualNewsAfterPressShowMore();
 
     }
 }

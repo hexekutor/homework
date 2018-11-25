@@ -6,10 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="arraySort" />
+        <module name="prime_numbers" />
         <module name="studentMicroservice" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
+    <bytecodeTargetLevel>
+      <module name="arraySort" target="1.8" />
+      <module name="homework3" target="1.5" />
+      <module name="prime_numbers" target="1.8" />
       <module name="studentMicroservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>

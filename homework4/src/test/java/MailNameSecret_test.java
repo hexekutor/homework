@@ -24,7 +24,6 @@ public class MailNameSecret_test {
     public void check_letter_button(){
         new MailNameSecretPage(driver)
                 .open("namesecret", "namesecret")
-                .pageShouldBeOpened()
                 .pressLetterButton()
                 .checkLetterButton();
 
@@ -33,7 +32,6 @@ public class MailNameSecret_test {
     public void check_input_name(){
         new MailNameSecretPage(driver)
                 .open("namesecret", "namesecret")
-                .pageShouldBeOpened()
                 .typeName("максим")
                 .checkSuggestMenu()
                 .pressSuggestElement()
@@ -43,7 +41,6 @@ public class MailNameSecret_test {
     public void check_select(){
         new MailNameSecretPage(driver)
                 .open("namesecret", "namesecret")
-                .pageShouldBeOpened()
                 .typeName("максим")
                 .pressSelectElement()
                 .assertSelect();

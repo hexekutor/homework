@@ -25,7 +25,6 @@ public class CheckResultsOfSearch_Test {
     public void check_results_of_search_Hello_world(){
         new GooglePageMainPage(driver)
              .open()
-             .pageShouldBeOpened()
              .typeSearchText("Hello World")
              .pressSearchButton()
              .resultBarShouldExist();

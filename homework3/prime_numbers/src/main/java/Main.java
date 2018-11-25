@@ -22,6 +22,4 @@ public class Main {
         }
         return primeList;
     }
-    public static void main(String[] args) {
-    }
 }

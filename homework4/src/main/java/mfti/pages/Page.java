@@ -38,12 +38,14 @@ public class Page<T> {
         openedDomain = getDomain();
         openedUrl = url;
         driver.get(openedDomain + url);
+        assertUrl();
         return (T) this;
     }
     protected T open() {
         openedDomain = getDomain();
         openedUrl = getDefaultUrl();
         driver.get(openedDomain + openedUrl);
+        assertUrl();
         return (T) this;
     }
     private String buildUrl(String urlTemplate, String ... args){
@@ -81,25 +83,17 @@ public class Page<T> {
     void logger(String message){
         rootLogger.info(message);
     }
-    /*void logger(String method){
-        Class<? extends Page> clazz = getClass();
-        try {
-            Method m = clazz.getMethod(method);
-            if(m.isAnnotationPresent(Step.class)){
-                Step step = m.getAnnotation(Step.class);
-                rootLogger.info(step.value());
-            }
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        }
-
-    }*/
-    protected T assertUrl() {
+    private T assertUrl() {
+        logger("Проверяем URL страницы");
         Class<? extends Page> clazz = getClass();
 
         if(clazz.isAnnotationPresent(UrlPattern.class)) {
             UrlPattern annotation = clazz.getAnnotation(UrlPattern.class);
             assertThat("Проверка Url страницы", driver.getCurrentUrl(), Matchers.matchesPattern(openedDomain + annotation.value()));
+        }else{
+            assertThat(String.format("Должна быть открыта страница %s", getDefaultUrl()),
+                    driver.getCurrentUrl(),
+                    StringContains.containsString(openedDomain + openedUrl));
         }
 
         return (T) this;
@@ -113,12 +107,6 @@ public class Page<T> {
         }
 
         return System.getProperty("webdriver.base.url");
-    }
-    protected T pageShouldBeOpened() {
-        assertThat(String.format("Должна быть открыта страница %s", getDefaultUrl()),
-                driver.getCurrentUrl(),
-                StringContains.containsString(openedDomain + openedUrl));
-        return (T) this;
     }
 
 
