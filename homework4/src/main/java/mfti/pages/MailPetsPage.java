@@ -28,11 +28,7 @@ public class MailPetsPage extends Page<MailPetsPage> {
     public MailPetsPage(WebDriver driver) {
         super(driver);
     }
-    public MailPetsPage open(String ... args) {
-        logger("Открывам страницу");
-        super.open(args);
-        return this;
-    }
+
     public MailPetsPage open() {
         logger("Открывам страницу");
         super.open();

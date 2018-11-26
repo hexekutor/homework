@@ -49,10 +49,6 @@ public class MailNameSecretPage extends Page<MailNameSecretPage> {
         logger("Открывам страницу");
         return super.open(args);
     }
-    public MailNameSecretPage open() {
-        logger("Открывам страницу");
-        return super.open();
-    }
     public MailNameSecretPage pressLetterButton(String letter){
         logger("клик по кнопке буквы");
         letterButton.stream()

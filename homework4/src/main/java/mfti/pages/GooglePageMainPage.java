@@ -55,12 +55,6 @@ public class GooglePageMainPage extends Page<GooglePageMainPage> {
         return this;
     }
 
-
-    public GooglePageMainPage open(String ... args) {
-        logger("Открывам страницу");
-        return super.open(args);
-    }
-
     public GooglePageMainPage open() {
         logger("Открывам страницу");
         return super.open();
