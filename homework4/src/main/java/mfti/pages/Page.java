@@ -17,7 +17,7 @@ import static org.junit.Assert.assertThat;
  * Base Page Pattern
  * @param <T>
  */
-public class Page<T> {
+public abstract class Page<T> {
 
     private static final Logger rootLogger = LogManager.getRootLogger();
     private String openedDomain = null;

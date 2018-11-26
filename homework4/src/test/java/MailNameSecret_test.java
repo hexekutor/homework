@@ -22,11 +22,11 @@ public class MailNameSecret_test {
 
     @Test
     public void check_letter_button(){
+        String letter = "А";
         new MailNameSecretPage(driver)
                 .open("namesecret", "namesecret")
-                .pressLetterButton()
-                .checkLetterButton();
-
+                .pressLetterButton(letter)
+                .checkLetterButton(letter);
     }
     @Test
     public void check_input_name(){

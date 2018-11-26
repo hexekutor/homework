@@ -19,7 +19,7 @@ public class MailPetsPage extends Page<MailPetsPage> {
     private List<WebElement> newsListAfterPressShowMore = null;
 
     @FindBy(css = "[class='pypo-item js-pgng_item']")
-    private WebElement newsFieldLocator;
+    private WebElement newsField;
 
     private String newsFieldSelector = "[class='pypo-item js-pgng_item']";
 
@@ -38,14 +38,14 @@ public class MailPetsPage extends Page<MailPetsPage> {
         super.open();
         return this;
     }
-    private List<WebElement> countNews(){
+    private List<WebElement> getNewsList(){
         return driver.findElements(By.cssSelector(newsFieldSelector));
     }
     public MailPetsPage countNewsBeforePressShowMore(){
         logger("Считаем количество новостей до нажатия кнопки");
         assertTrue("новости отображаются на странице",
-                standartWaiter.waitForCondition(ExpectedConditions.visibilityOf(newsFieldLocator)));
-        newsList = countNews();
+                standartWaiter.waitForCondition(ExpectedConditions.visibilityOf(newsField)));
+        newsList = getNewsList();
         return this;
     }
     public MailPetsPage pressShowMoreButton(){
@@ -59,12 +59,12 @@ public class MailPetsPage extends Page<MailPetsPage> {
                 standartWaiter.waitForCondition(ExpectedConditions
                         .numberOfElementsToBeMoreThan(By.cssSelector(newsFieldSelector),
                                 newsList.size())));
-        newsListAfterPressShowMore = countNews();
+        newsListAfterPressShowMore = getNewsList();
         return this;
     }
     public MailPetsPage checkEqualNewsAfterPressShowMore(){
         logger("проверяем что новости не изменились");
-        newsListAfterPressShowMore = countNews();
+        newsListAfterPressShowMore = getNewsList();
         assertTrue(newsListAfterPressShowMore.containsAll(newsList));
         return this;
     }

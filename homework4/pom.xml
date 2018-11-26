@@ -25,9 +25,6 @@
         <webdriver.timeouts.implicitlywait>5000</webdriver.timeouts.implicitlywait>
 
         <!--Настройка домена драйвера-->
-        <webdriver.google.url>https://www.google.ru</webdriver.google.url>
-        <webdriver.petsMail.url>https://pets.mail.ru</webdriver.petsMail.url>
-        <webdriver.nameSecretMail.url>https://horo.mail.ru</webdriver.nameSecretMail.url>
     </properties>
 
     <dependencies>
@@ -88,6 +85,7 @@
                     <threadCountMethods>${thread.count}</threadCountMethods>
                     <argLine> -Xms512m -Xmx1024m -Dfile.encoding=UTF-8</argLine>
                     <systemPropertyVariables>
+                        <webdriver.base.url>${webdriver.url}</webdriver.base.url>
                         <webdriver.timeouts.implicitlywait>${webdriver.timeouts.implicitlywait}</webdriver.timeouts.implicitlywait>
                     </systemPropertyVariables>
                 </configuration>
@@ -98,63 +96,21 @@
     <profiles>
         <profile>
             <id>googleHelloWorld</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <systemPropertyVariables>
-                                <webdriver.base.url>${webdriver.google.url}</webdriver.base.url>
-                            </systemPropertyVariables>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <properties>
+                <webdriver.url>https://www.google.ru</webdriver.url>
+            </properties>
         </profile>
         <profile>
             <id>mailPets</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <systemPropertyVariables>
-                                <webdriver.base.url>${webdriver.petsMail.url}</webdriver.base.url>
-                            </systemPropertyVariables>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <properties>
+                <webdriver.url>https://pets.mail.ru</webdriver.url>
+            </properties>
         </profile>
         <profile>
             <id>mailNameSecret</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <systemPropertyVariables>
-                                <webdriver.base.url>${webdriver.nameSecretMail.url}</webdriver.base.url>
-                            </systemPropertyVariables>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <properties>
+                <webdriver.url>https://horo.mail.ru</webdriver.url>
+            </properties>
         </profile>
     </profiles>
 </project>

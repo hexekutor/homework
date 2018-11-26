@@ -28,8 +28,6 @@ public class CheckResultsOfSearch_Test {
              .typeSearchText("Hello World")
              .pressSearchButton()
              .resultBarShouldExist();
-
-
     }
 
 }

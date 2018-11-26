@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="NegativeUnitTests" time="0.211" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="NegativeUnitTests" time="0.194" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -7,7 +7,7 @@
     <property name="java.specification.version" value="1.8"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
     <property name="sun.jnu.encoding" value="Cp1251"/>
-    <property name="java.class.path" value="C:\Users\User\Desktop\прога\java\homework3\studentMicroservice\target\test-classes;C:\Users\User\Desktop\прога\java\homework3\studentMicroservice\target\classes;C:\Users\User\.m2\repository\org\hamcrest\hamcrest-all\1.3\hamcrest-all-1.3.jar;C:\Users\User\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\User\.m2\repository\org\mockito\mockito-all\1.10.19\mockito-all-1.10.19.jar;C:\Users\User\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\User\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="C:\Users\User\Desktop\homework\homework3\studentMicroservice\target\test-classes;C:\Users\User\Desktop\homework\homework3\studentMicroservice\target\classes;C:\Users\User\.m2\repository\org\hamcrest\hamcrest-all\1.3\hamcrest-all-1.3.jar;C:\Users\User\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\User\.m2\repository\org\mockito\mockito-all\1.10.19\mockito-all-1.10.19.jar;C:\Users\User\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\User\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="32"/>
     <property name="user.variant" value=""/>
@@ -18,20 +18,20 @@
     <property name="user.country" value="RU"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_121\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire6710445064845371253\surefirebooter3953361580323789238.jar C:\Users\User\AppData\Local\Temp\surefire6710445064845371253 2018-11-25T19-59-26_477-jvmRun1 surefire4351369719159559544tmp surefire_04693428044724360325tmp"/>
-    <property name="surefire.test.class.path" value="C:\Users\User\Desktop\прога\java\homework3\studentMicroservice\target\test-classes;C:\Users\User\Desktop\прога\java\homework3\studentMicroservice\target\classes;C:\Users\User\.m2\repository\org\hamcrest\hamcrest-all\1.3\hamcrest-all-1.3.jar;C:\Users\User\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\User\.m2\repository\org\mockito\mockito-all\1.10.19\mockito-all-1.10.19.jar;C:\Users\User\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\User\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire5787387631595407631\surefirebooter6764552093536865292.jar C:\Users\User\AppData\Local\Temp\surefire5787387631595407631 2018-11-26T16-47-39_344-jvmRun1 surefire4781605368388087627tmp surefire_06615045848871661902tmp"/>
+    <property name="surefire.test.class.path" value="C:\Users\User\Desktop\homework\homework3\studentMicroservice\target\test-classes;C:\Users\User\Desktop\homework\homework3\studentMicroservice\target\classes;C:\Users\User\.m2\repository\org\hamcrest\hamcrest-all\1.3\hamcrest-all-1.3.jar;C:\Users\User\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\User\.m2\repository\org\mockito\mockito-all\1.10.19\mockito-all-1.10.19.jar;C:\Users\User\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\User\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\User"/>
     <property name="user.language" value="ru"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.home" value="C:\Program Files (x86)\Java\jdk1.8.0_121\jre"/>
-    <property name="basedir" value="C:\Users\User\Desktop\прога\java\homework3\studentMicroservice"/>
+    <property name="basedir" value="C:\Users\User\Desktop\homework\homework3\studentMicroservice"/>
     <property name="file.separator" value="\"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire6710445064845371253\surefirebooter3953361580323789238.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire5787387631595407631\surefirebooter6764552093536865292.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files (x86)\Java\jdk1.8.0_121\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.8.0_121\jre\lib\rt.jar;C:\Program Files (x86)\Java\jdk1.8.0_121\jre\lib\sunrsasign.jar;C:\Program Files (x86)\Java\jdk1.8.0_121\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.8.0_121\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.8.0_121\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.8.0_121\jre\lib\jfr.jar;C:\Program Files (x86)\Java\jdk1.8.0_121\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
@@ -48,7 +48,7 @@
     <property name="java.io.tmpdir" value="C:\Users\User\AppData\Local\Temp\"/>
     <property name="idea.version" value="2016.3.4"/>
     <property name="java.version" value="1.8.0_121"/>
-    <property name="user.dir" value="C:\Users\User\Desktop\прога\java\homework3\studentMicroservice"/>
+    <property name="user.dir" value="C:\Users\User\Desktop\homework\homework3\studentMicroservice"/>
     <property name="os.arch" value="x86"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
@@ -61,5 +61,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="test_write_null_in_database" classname="NegativeUnitTests" time="0.211"/>
+  <testcase name="test_write_null_in_database" classname="NegativeUnitTests" time="0.194"/>
 </testsuite>

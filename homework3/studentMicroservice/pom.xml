@@ -27,6 +27,9 @@
                     <perCoreThreadCount>false</perCoreThreadCount>
                     <useUnlimitedThreads>true</useUnlimitedThreads>
                     <threadCountMethods>32</threadCountMethods>
+                    <includes>
+                        <include>${tests.run}</include>
+                    </includes>
                 </configuration>
             </plugin>
             <plugin>
@@ -47,63 +50,21 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <includes>
-                                <include>TestsSuite</include>
-                            </includes>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                    </plugin>
-                </plugins>
-            </build>
+            <properties>
+                <tests.run>TestsSuite</tests.run>
+            </properties>
         </profile>
         <profile>
             <id>negativeTests</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <includes>
-                                <include>NegativeUnitTests</include>
-                            </includes>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                    </plugin>
-                </plugins>
-            </build>
+            <properties>
+                <tests.run>NegativeUnitTests</tests.run>
+            </properties>
         </profile>
         <profile>
             <id>positiveTests</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <includes>
-                                <include>PositiveUnitTests</include>
-                            </includes>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                    </plugin>
-                </plugins>
-            </build>
+            <properties>
+                <tests.run>PositiveUnitTests</tests.run>
+            </properties>
         </profile>
     </profiles>
 
