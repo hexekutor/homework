@@ -12,13 +12,11 @@
         <module name="tvProgramProject" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="filterProject" target="1.8" />
-      <module name="homework6" target="1.8" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="homework6" target="1.5" />
       <module name="otvetMailProject" target="1.8" />
       <module name="paginationProject" target="1.8" />
       <module name="tvProgramProject" target="1.8" />
-      <module name="tvProject" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
