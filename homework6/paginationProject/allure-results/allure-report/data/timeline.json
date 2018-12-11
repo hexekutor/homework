@@ -1,0 +1,25 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "hexekutor",
+    "children" : [ {
+      "name" : "20852@hexekutor.pool-1-thread-2(12)",
+      "children" : [ {
+        "name" : "Проверка работы кнопок перехода на страницы в меню пагинации",
+        "uid" : "fe9e2e2433b27fec",
+        "parentUid" : "09c3741aef9fbcaa50497038c9123a83",
+        "status" : "passed",
+        "time" : {
+          "start" : 1543955092768,
+          "stop" : 1543955110791,
+          "duration" : 18023
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "09c3741aef9fbcaa50497038c9123a83"
+    } ],
+    "uid" : "51ae958a4e67ba017583aa5091cec6b3"
+  } ]
+}

@@ -1,0 +1,152 @@
+{
+  "uid" : "fe9e2e2433b27fec",
+  "name" : "Проверка работы кнопок перехода на страницы в меню пагинации",
+  "fullName" : "pagination_Test.checkPaginationView",
+  "historyId" : "bffcca15beba7a510cac74aec22b37d4",
+  "time" : {
+    "start" : 1543955092768,
+    "stop" : 1543955110791,
+    "duration" : 18023
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Открытие страницы",
+      "time" : {
+        "start" : 1543955093034,
+        "stop" : 1543955102190,
+        "duration" : 9156
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Проверка перехода на определенную страницу",
+      "time" : {
+        "start" : 1543955102192,
+        "stop" : 1543955104230,
+        "duration" : 2038
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "page",
+        "value" : "5"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Проверка перехода на предыдущую страницу",
+      "time" : {
+        "start" : 1543955104230,
+        "stop" : 1543955105516,
+        "duration" : 1286
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Проверка перехода на следующую страницу",
+      "time" : {
+        "start" : 1543955105516,
+        "stop" : 1543955107479,
+        "duration" : 1963
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Проверка перехода на следующую десятку страниц",
+      "time" : {
+        "start" : 1543955107479,
+        "stop" : 1543955109588,
+        "duration" : 2109
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Проверка перехода на прошлую десятку страниц",
+      "time" : {
+        "start" : 1543955109588,
+        "stop" : 1543955110786,
+        "duration" : 1198
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : false,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : true,
+    "stepsCount" : 6
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : ""
+  }, {
+    "name" : "testClass",
+    "value" : "pagination_Test"
+  }, {
+    "name" : "testMethod",
+    "value" : "checkPaginationView"
+  }, {
+    "name" : "suite",
+    "value" : "pagination_Test"
+  }, {
+    "name" : "host",
+    "value" : "hexekutor"
+  }, {
+    "name" : "thread",
+    "value" : "20852@hexekutor.pool-1-thread-2(12)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "fe9e2e2433b27fec.json",
+  "parameterValues" : [ ]
+}

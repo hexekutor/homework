@@ -1,0 +1,17 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Проверка кнопок переключения вида списка каналов",
+    "uid" : "bb222e8b14e6ebbb",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1543782252324,
+      "stop" : 1543782267646,
+      "duration" : 15322
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  } ]
+}

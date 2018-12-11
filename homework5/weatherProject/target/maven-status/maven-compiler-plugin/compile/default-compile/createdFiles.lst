@@ -1,0 +1,15 @@
+mfti\pages\WeatherPage.class
+mfti\navigation\UrlParam.class
+mfti\drivers\WebDriverFactory$1.class
+mfti\navigation\UrlPattern.class
+mfti\wait\StandartWaiter.class
+mfti\navigation\DefaultUrl.class
+mfti\navigation\Domain.class
+mfti\pages\WeatherCalendarPage.class
+mfti\pages\WeatherArticlePage.class
+mfti\month\Month.class
+mfti\drivers\WebDriverFactory.class
+mfti\data\BrowsersData.class
+mfti\navigation\Step.class
+mfti\pages\Page.class
+mfti\navigation\Url.class

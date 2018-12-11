@@ -1,0 +1,25 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "hexekutor",
+    "children" : [ {
+      "name" : "34080@hexekutor.pool-1-thread-2(12)",
+      "children" : [ {
+        "name" : "Проверка кнопок переключения вида списка каналов",
+        "uid" : "bb222e8b14e6ebbb",
+        "parentUid" : "675b8b9dced771d37c3b4b2713302edb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1543782252324,
+          "stop" : 1543782267646,
+          "duration" : 15322
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "675b8b9dced771d37c3b4b2713302edb"
+    } ],
+    "uid" : "51ae958a4e67ba017583aa5091cec6b3"
+  } ]
+}
