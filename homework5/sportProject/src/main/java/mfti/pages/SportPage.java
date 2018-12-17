@@ -1,8 +1,9 @@
 package mfti.pages;
 
 
-import mfti.navigation.DefaultUrl;
 import mfti.navigation.Domain;
+import mfti.navigation.Url;
+import mfti.navigation.UrlParam;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +17,11 @@ import java.util.List;
 import static org.junit.Assert.assertFalse;
 
 @Domain("https://sportmail.ru")
-@DefaultUrl("/news/football-worldcup/32246552/")
+@UrlParam(
+        {
+                @Url(name = "article", url = "/news/football-worldcup//%1/")
+        }
+)
 public class SportPage extends Page<SportPage>{
 
     @FindBy(css = "[class = 'error-page__title']")
@@ -26,8 +31,8 @@ public class SportPage extends Page<SportPage>{
         super(driver);
     }
 
-    public SportPage open() {
-        super.open();
+    public SportPage open(String ... args) {
+        super.open(args);
         return this;
     }
     private static boolean isElementExists(WebElement element){

@@ -21,12 +21,13 @@ public class Cars_Test {
     }
 
     @Test
-    public void check_letter_button(){
+    public void check_popup(){
         String parameter = "Управляемость";
         new CarsPage(driver)
                 .open()
                 .pressParameter(parameter)
-                .checkPopup(parameter)
-                .closePopup();
+                .checkPopupOpened(parameter)
+                .closePopup()
+                .checkPopupClosed();
     }
 }

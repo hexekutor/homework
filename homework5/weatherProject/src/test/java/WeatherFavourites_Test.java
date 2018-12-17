@@ -24,10 +24,14 @@ public class WeatherFavourites_Test {
     public void check_weather_favourites(){
         new WeatherPage(driver)
                 .open()
+                .openFavouritesList()
+                .checkFavourtesListOpened()
                 .checkCityIsNotInFavourites()
                 .insertSearchField()
                 .pressSearchButton()
                 .pressFavouritesButton()
+                .openFavouritesList()
+                .checkFavourtesListOpened()
                 .checkCityIsInFavourites();
 
     }

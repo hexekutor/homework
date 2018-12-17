@@ -6,6 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import components.BaseComponent;
 import components.Component;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -18,7 +19,7 @@ public class MistakePopup extends BaseComponent<MistakePopup> {
         this.url = url;
     }
     private ElementsCollection inputFields = $$("[class='input__field']");
-    private SelenideElement closePopupButton = $("[class='icon icon_close js-popup_close popup__close']");
+    private SelenideElement closePopupButton = $(By.xpath("//span[contains(@class,'icon_close')]"));
     @Step("проверяем поле URL")
     public MistakePopup checkUrlField(){
         inputFields.first().should(Condition.value(url));

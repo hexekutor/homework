@@ -10,8 +10,6 @@ public class pagination_Test {
                 .open()
                 .goToPage(5)
                 .goToPreviousPage()
-                .goToNextPage()
-                .goNextTenPages()
-                .goBackTenPages();
+                .goToNextPage();
     }
 }

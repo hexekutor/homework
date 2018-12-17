@@ -18,11 +18,16 @@ import static org.junit.Assert.assertTrue;
 @Component(css = "[class='sharelist__items']")
 public class ShardingComponent extends BaseComponent<ShardingComponent> {
     private String nameButton = null;
-    public ShardingComponent(String nameButton){
+    private String expectedUrlSubstring = null;
+
+    public ShardingComponent(String nameButton, String expectedUrlSubstring){
         this.nameButton = nameButton;
+        this.expectedUrlSubstring = expectedUrlSubstring;
     }
+
     private ElementsCollection buttonsCollection = $$("[class='sharelist__items'] a");
     private SelenideElement closeAddButton = $("[class='rb-button-close']");
+
     @Step("клик на кнопку шардинка")
     public ShardingComponent clickShardingButton(){
         SelenideElement shardingButton = buttonsCollection.stream()
@@ -46,13 +51,7 @@ public class ShardingComponent extends BaseComponent<ShardingComponent> {
                 .get();
         Selenide.switchTo().window(newWindow);
         assertTrue("проверка url нового окна",
-                WebDriverRunner.url().contains(getCheckString()));
+                WebDriverRunner.url().contains(expectedUrlSubstring));
         return this;
-    }
-    private String getCheckString(){
-        switch (nameButton){
-            case "ОДНОКЛАССНИКИ": return "ok";
-            default: return "";
-        }
     }
 }

@@ -15,16 +15,16 @@ import static org.junit.Assert.assertTrue;
 @DefaultUrl("/catalog/ford/focus/iii_restailing/sedan/")
 public class CarsPage extends Page<CarsPage>{
 
-    @FindBy(css = "[class='link link_underline link_icon color_black']")
+    @FindBy(css = "[class='margin_bottom_5'] a")
     private List<WebElement> parametersList;
 
-    @FindBy(css = "[class='overlay__content js-popup_blocks']")
+    @FindBy(xpath = "//div[contains(@class,'overlay__content')]")
     private WebElement popup;
 
-    @FindBy(css = "[class='text text_bold_large']")
+    @FindBy(xpath = "//div[@class='popup__wrapper']/div/span")
     private WebElement popupHeader;
 
-    @FindBy(css = "[class='icon icon_close js-popup_close popup__close']")
+    @FindBy(xpath = "//div[@class='overlay__inner']//span[contains(@class,'icon_close')]")
     private WebElement closeButton;
 
     public CarsPage(WebDriver driver) {
@@ -44,7 +44,7 @@ public class CarsPage extends Page<CarsPage>{
 
         return this;
     }
-    public CarsPage checkPopup(String parameter){
+    public CarsPage checkPopupOpened(String parameter){
         assertTrue("попап отображается на странице", standartWaiter.waitForCondition(
                 ExpectedConditions.visibilityOf(popup)));
         assertTrue("проверка заголовка попапа", popupHeader.getText().contains(parameter));
@@ -52,6 +52,11 @@ public class CarsPage extends Page<CarsPage>{
     }
     public CarsPage closePopup(){
         closeButton.click();
+        assertTrue("закрытие попапа", standartWaiter.waitForCondition(
+                ExpectedConditions.invisibilityOf(popup)));
+        return this;
+    }
+    public CarsPage checkPopupClosed(){
         assertTrue("закрытие попапа", standartWaiter.waitForCondition(
                 ExpectedConditions.invisibilityOf(popup)));
         return this;

@@ -17,7 +17,7 @@ public class PetsArticlePage extends Page<PetsArticlePage>{
         super(driver);
     }
 
-    @FindBy(css = "[class='note__text breadcrumbs__text js-ago']")
+    @FindBy(css = "[class='note'] time")
     private WebElement date;
 
     public PetsArticlePage open() {
@@ -26,7 +26,7 @@ public class PetsArticlePage extends Page<PetsArticlePage>{
     }
     public PetsArticlePage checkDate(){
         String dateString = date.getText();
-        assertTrue("проверка правильности даты", dateString.matches("\\d+ [а-я]+ \\d+"));
+        assertTrue("проверка правильности даты", dateString.matches("\\d+\\s[а-я]+\\s\\d+"));
         return this;
     }
 

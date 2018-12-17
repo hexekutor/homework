@@ -8,6 +8,7 @@ public class clickUserAvatar_Test {
     public void checkPaginationView() {
         new MainPage()
                 .open()
-                .pressUserAvatar();
+                .pressUserAvatar()
+                .checkCodeHttpRequest(200);
     }
 }

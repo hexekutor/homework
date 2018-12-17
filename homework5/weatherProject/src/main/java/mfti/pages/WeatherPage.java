@@ -23,49 +23,49 @@ public class WeatherPage extends Page<WeatherPage> {
     }
     private String city = "Нью-Йорк";
 
-    @FindBy(css = "[class='js-input pm-toolbar__search__input  pm-toolbar__search__input_not-expandable pm-toolbar__search__input_not-adaptive']")
+    @FindBy(xpath = "//input[contains(@class,'pm-toolbar__search__input')]")
     private WebElement searchInputField;
 
     @FindBy(css = "[type='submit']")
     private WebElement searchButton;
 
-    @FindBy(css = "[class='icon__inner icon__inner_add']")
+    @FindBy(xpath = "//span[contains(@class,'icon__inner_add')]")
     private WebElement favouritesButton;
 
     @FindBy(css = "[class='city-select__item__city']")
     private List<WebElement> favouritesCity;
 
-    @FindBy(css = "[class='js-text-inner pm-toolbar__button__text__inner  pm-toolbar__button__text__inner_noicon pm-toolbar__button__text__inner_dropdown']")
+    @FindBy(xpath = "//span[contains(@class,'js-text-inner')]")
     private WebElement citiesFavourities;
 
-    private String cityHeaderSelector = "[class='js-text-inner pm-toolbar__button__text__inner  pm-toolbar__button__text__inner_noicon pm-toolbar__button__text__inner_dropdown']";
+    private String cityLocator = "//span[contains(@class,'js-text-inner')]";
 
     public WeatherPage open() {
         super.open();
         return this;
     }
     public WeatherPage checkCityIsNotInFavourites(){
-        Actions actions = new Actions(driver);
-        actions.moveToElement(citiesFavourities)
-                .build()
-                .perform();
-        assertTrue("Города в избранном видны", standartWaiter.
-                waitForCondition(ExpectedConditions.visibilityOf(favouritesCity.get(0))));
         List<String> cities = new ArrayList<>();
         favouritesCity.forEach(city -> cities.add(city.getText()));
         assertTrue("Города нет в избранном", !cities.contains(city));
         return this;
     }
     public WeatherPage checkCityIsInFavourites(){
-        Actions actions = new Actions(driver);
-        actions.moveToElement(citiesFavourities)
-                .build()
-                .perform();
-        assertTrue("Города в избранном видны", standartWaiter.
-                waitForCondition(ExpectedConditions.visibilityOf(favouritesCity.get(0))));
         List<String> cities = new ArrayList<>();
         favouritesCity.forEach(city -> cities.add(city.getText()));
         assertTrue("Город есть в избранном", cities.contains(city));
+        return this;
+    }
+    public WeatherPage openFavouritesList(){
+        new Actions(driver)
+                .moveToElement(citiesFavourities)
+                .build()
+                .perform();
+        return this;
+    }
+    public WeatherPage checkFavourtesListOpened(){
+        assertTrue("Города в избранном видны", standartWaiter.
+                waitForCondition(ExpectedConditions.visibilityOf(favouritesCity.get(0))));
         return this;
     }
     public WeatherPage insertSearchField(){
@@ -76,7 +76,7 @@ public class WeatherPage extends Page<WeatherPage> {
         searchButton.click();
         assertTrue("Город отображается на странице",
                 standartWaiter.waitForCondition(ExpectedConditions
-                        .textToBe(By.cssSelector(cityHeaderSelector), city)));
+                        .textToBe(By.xpath(cityLocator), city)));
         return this;
     }
     public WeatherPage pressFavouritesButton(){

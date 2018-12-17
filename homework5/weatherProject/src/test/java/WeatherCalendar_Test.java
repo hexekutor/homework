@@ -1,3 +1,4 @@
+import mfti.calendar.Buttons;
 import mfti.data.BrowsersData;
 import mfti.drivers.WebDriverFactory;
 import mfti.pages.WeatherCalendarPage;
@@ -25,9 +26,12 @@ public class WeatherCalendar_Test {
         new WeatherCalendarPage(driver)
                 .open()
                 .pressCalendarButton()
-                .pressPreviousCalendarButton()
-                .pressNextCalendarButton()
-                .pressDayButton(1);
+                .pressButton(Buttons.PREVIOUS)
+                .checkChangingMonth(Buttons.PREVIOUS)
+                .pressButton(Buttons.NEXT)
+                .checkChangingMonth(Buttons.NEXT)
+                .pressDayButton(1)
+                .checkDayButton();
 
     }
 }

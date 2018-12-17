@@ -1,6 +1,7 @@
 package mfti.pages;
 
-import mfti.month.Month;
+import mfti.calendar.Buttons;
+import mfti.calendar.Month;
 import mfti.navigation.DefaultUrl;
 import mfti.navigation.Domain;
 import org.openqa.selenium.By;
@@ -23,13 +24,13 @@ public class WeatherCalendarPage extends Page<WeatherCalendarPage>{
     @FindBy(css = "[class='dropdown__box']")
     private WebElement calendar;
 
-    @FindBy(css = "[class='calendar__month js-calendar_month']")
+    @FindBy(xpath = "//span[contains(@class,'calendar__month')]")
     private WebElement month;
 
-    @FindBy(css = "[class='icon icon_less js-calendar_prev']")
+    @FindBy(xpath = "//i[contains(@class,'icon_less')]")
     private WebElement previousMonthButton;
 
-    @FindBy(css = "[class='calendar__control calendar__control_next']")
+    @FindBy(xpath = "//i[contains(@class,'icon_more')]")
     private WebElement nextMonthButton;
 
     @FindBy(css = "[class='calendar__cell calendar__cell_enabled']")
@@ -38,8 +39,10 @@ public class WeatherCalendarPage extends Page<WeatherCalendarPage>{
     @FindBy(css = "[class='heading heading_minor heading_line']")
     private WebElement header;
 
-    private String headerSelector = header.toString();
+
     private String monthSelector = month.toString();
+    private String monthString = null;
+    private  String dayString = null;
 
     public WeatherCalendarPage(WebDriver driver) {
         super(driver);
@@ -58,50 +61,46 @@ public class WeatherCalendarPage extends Page<WeatherCalendarPage>{
         assertTrue("Календарь отображается на странице", standartWaiter.
                 waitForCondition(ExpectedConditions.visibilityOf(calendar)));
     }
-    public WeatherCalendarPage pressPreviousCalendarButton(){
+    public WeatherCalendarPage pressButton(Buttons button){
         checkCalendarToBeOpened();
-
-        String monthBeforeString = month.getText();
-
-        previousMonthButton.click();
-
-        assertTrue("Месяц изменился", standartWaiter.
-                waitForCondition(ExpectedConditions.not(
-                        ExpectedConditions.textToBe(
-                                By.cssSelector(monthSelector), monthBeforeString))));
-        assertTrue("Месяц поменялся на предыдущий",
-                Month.checkMonthChangesToPrevious(
-                        monthBeforeString, month.getText()));
+        monthString = month.getText();
+        if(button == Buttons.NEXT)
+            nextMonthButton.click();
+        else
+            previousMonthButton.click();
         return this;
     }
-    public WeatherCalendarPage pressNextCalendarButton(){
-        checkCalendarToBeOpened();
-
-        String monthBeforeString = month.getText();
-
-        nextMonthButton.click();
-
+    public WeatherCalendarPage checkChangingMonth(Buttons button){
         assertTrue("Месяц изменился", standartWaiter.
                 waitForCondition(ExpectedConditions.not(
                         ExpectedConditions.textToBe(
-                                By.cssSelector(monthSelector), monthBeforeString))));
-        assertTrue("Месяц поменялся на следующий",
-                Month.checkMonthChangesToNext(
-                        monthBeforeString, month.getText()));
+                                By.cssSelector(monthSelector), monthString))));
+        if(button == Buttons.NEXT)
+            assertTrue("Месяц поменялся на следующий",
+                    Month.checkMonthChangesToNext(
+                            monthString, month.getText()));
+        else
+            assertTrue("Месяц поменялся на предыдущий",
+                    Month.checkMonthChangesToPrevious(
+                            monthString, month.getText()));
+        monthString = null;
         return this;
     }
     public WeatherCalendarPage pressDayButton(Integer day){
         checkCalendarToBeOpened();
 
-        String monthString = month.getText();
+        monthString = month.getText();
         monthString = monthString.substring(0, monthString.length() - 1);
-        String dayString = Integer.toString(day);
+        dayString = Integer.toString(day);
 
         dayButtonList.stream()
-                            .filter(calendarDay -> Integer.parseInt(calendarDay.getText()) == day)
-                            .findFirst()
-                            .get()
-                            .click();
+                        .filter(calendarDay -> Integer.parseInt(calendarDay.getText()) == day)
+                        .findFirst()
+                        .get()
+                        .click();
+        return this;
+    }
+    public WeatherCalendarPage checkDayButton(){
         assertTrue("переход на другую страницу", standartWaiter.
                 waitForCondition(ExpectedConditions.invisibilityOf(calendar)));
         assertTrue("Показана страница с нужной датой", header.getText().

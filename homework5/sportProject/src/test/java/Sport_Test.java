@@ -23,7 +23,7 @@ public class Sport_Test {
     @Test
     public void check_sport_page(){
         new SportPage(driver)
-                .open()
+                .open("article", "32246552")
                 .checkPageOpenedWithoutError()
                 .getLogs();
     }
